@@ -19,5 +19,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'Admin\HomeController@index')->name('admin');
+	//Route::get('/admin', 'Admin\HomeController@index')->name('admin');
 
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+    'as' => 'admin',
+], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    // Views => redirect to page with router-view
+    // Countries
+    Route::get('/countries', 'HomeController@index');
+    Route::get('/countries/{id}', 'HomeController@index');
+    // Users
+    Route::get('/users', 'HomeController@index');
+    Route::get('/users/{id}', 'HomeController@index');
+});
