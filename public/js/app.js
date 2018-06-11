@@ -48998,10 +48998,19 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_AdminHome_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_AdminHome_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_AdminHome_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adminView_countries_Index_vue__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adminView_countries_Index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__adminView_countries_Index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adminView_countries_Create_vue__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__adminView_countries_Create_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__adminView_countries_Create_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__adminView_countries_Edit_vue__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__adminView_countries_Edit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__adminView_countries_Edit_vue__);
 
 
 
 // Components
+
+
+
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
@@ -49014,6 +49023,21 @@ function newRouter() {
             path: adminUrl, name: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_2__components_AdminHome_vue___default.a,
             meta: {
                 title: 'Dashboard'
+            }
+        }, {
+            path: adminUrl + 'countries', name: 'countries', component: __WEBPACK_IMPORTED_MODULE_3__adminView_countries_Index_vue___default.a,
+            meta: {
+                title: 'Countries'
+            }
+        }, {
+            path: adminUrl + 'countries/create', name: 'countries-create', component: __WEBPACK_IMPORTED_MODULE_4__adminView_countries_Create_vue___default.a,
+            meta: {
+                title: 'Countries - Create'
+            }
+        }, {
+            path: adminUrl + 'countries/:id', name: 'countries-edit', component: __WEBPACK_IMPORTED_MODULE_5__adminView_countries_Edit_vue___default.a,
+            meta: {
+                title: 'Countries - Edit'
             }
         }],
         scrollBehavior: function scrollBehavior(to, from) {
@@ -52314,6 +52338,1129 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-90dafe6c", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(68)
+/* template */
+var __vue_template__ = __webpack_require__(76)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\adminView\\countries\\Index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f91ff05a", Component.options)
+  } else {
+    hotAPI.reload("data-v-f91ff05a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Crud_Crud__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Index_vue__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Crud_Index_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__components_Crud_Crud__["a" /* default */]],
+    components: {
+        CreateButton: __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue___default.a,
+        CrudIndex: __WEBPACK_IMPORTED_MODULE_1__components_Crud_Index_vue___default.a
+    },
+    data: function data() {
+        return {
+            module: 'countries',
+            columns: [{ id: 0, name: 'ID', width: 5 }, { id: 1, name: 'Name', width: 30 }, { id: 3, name: 'Users', width: 15 }, { id: 4, name: 'Created at', width: 50 }]
+        };
+    },
+    mounted: function mounted() {}
+});
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    props: ['store'],
+    data: function data() {
+        return {
+            loading: true,
+            items: []
+        };
+    },
+
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.getItems().then(function () {
+            _this.loading = false;
+        });
+    },
+    methods: {
+        getItems: function getItems() {
+            var _this2 = this;
+
+            return new Promise(function (resolve) {
+                _this2.$http.get(_this2.getUrl()).then(function (response) {
+                    _this2.items = response.data.data;
+                    resolve();
+                }, function () {
+                    _this2.$swal("Something went wrong. Try again!", '', "error");
+                });
+            });
+        },
+        getUrl: function getUrl() {
+            return this.store.apiUrl + this.module + '/';
+        }
+    }
+});
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(71)
+/* template */
+var __vue_template__ = __webpack_require__(72)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Crud\\Index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0b17b16a", Component.options)
+  } else {
+    hotAPI.reload("data-v-0b17b16a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'crud-index',
+    props: ['columns', 'store', 'loading'],
+    components: {},
+    methods: {}
+});
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      !_vm.loading
+        ? _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("table", { staticClass: "table table-hover" }, [
+                _c("thead", { staticClass: "thead-inverse" }, [
+                  _c(
+                    "tr",
+                    _vm._l(_vm.columns, function(column) {
+                      return _c(
+                        "th",
+                        { style: "width:" + column.width + "%" },
+                        [_vm._v(_vm._s(column.name))]
+                      )
+                    })
+                  )
+                ]),
+                _vm._v(" "),
+                _c("tbody", [_vm._t("default")], 2)
+              ]),
+              _vm._v(" "),
+              _c("div", [_vm._v("Paginate toddo")])
+            ])
+          ])
+        : _c("loader", [_vm._v("Loading " + _vm._s(_vm.store.module))])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0b17b16a", module.exports)
+  }
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(74)
+/* template */
+var __vue_template__ = __webpack_require__(75)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Crud\\CreateButton.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2f324ee5", Component.options)
+  } else {
+    hotAPI.reload("data-v-2f324ee5", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'create-button',
+    props: ['name']
+});
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "router-link",
+    {
+      staticClass: "btn btn-sm btn-success",
+      attrs: { to: { name: _vm.name } }
+    },
+    [_vm._v("\n    Add new\n")]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2f324ee5", module.exports)
+  }
+}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "panel panel-default" }, [
+        _c("div", { staticClass: "panel-heading" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _vm._v(
+                "\n                        " +
+                  _vm._s(_vm.store.title) +
+                  "\n                    "
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 text-right" },
+              [_c("create-button", { attrs: { name: "countries-create" } })],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "panel-body" },
+          [
+            _c(
+              "crud-index",
+              {
+                attrs: {
+                  columns: _vm.columns,
+                  loading: _vm.loading,
+                  store: _vm.store
+                }
+              },
+              _vm._l(_vm.items, function(item) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(item.id))]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "countries-edit",
+                              params: { id: item.id }
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(item.name) +
+                              "\n                            "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.users_count))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.created_at))])
+                ])
+              })
+            )
+          ],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f91ff05a", module.exports)
+  }
+}
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(81)
+/* template */
+var __vue_template__ = __webpack_require__(83)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\adminView\\countries\\Form.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e55df25a", Component.options)
+  } else {
+    hotAPI.reload("data-v-e55df25a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(84)
+/* template */
+var __vue_template__ = __webpack_require__(85)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Crud\\Back.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-df837204", Component.options)
+  } else {
+    hotAPI.reload("data-v-df837204", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(80)
+/* template */
+var __vue_template__ = __webpack_require__(86)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\adminView\\countries\\Create.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-12453d4b", Component.options)
+  } else {
+    hotAPI.reload("data-v-12453d4b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Form_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Form_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['store'],
+    components: {
+        CrudBack: __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue___default.a,
+        UsersForm: __WEBPACK_IMPORTED_MODULE_0__Form_vue___default.a
+    },
+    data: function data() {
+        return {
+            module: 'countries',
+            item: {}
+        };
+    }
+});
+
+/***/ }),
+/* 81 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Crud_Form__ = __webpack_require__(82);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'countries-form',
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__components_Crud_Form__["a" /* default */]]
+});
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: 'crud-form',
+    props: ['item', 'store', 'module'],
+    data: function data() {
+        return {
+            tmpItem: {}
+        };
+    },
+    mounted: function mounted() {
+        this.tmpItem = JSON.parse(JSON.stringify(this.item));
+    },
+
+    methods: {
+        onSubmit: function onSubmit() {
+            if (this.item.id) this.updateItem();else this.createItem();
+        },
+        createItem: function createItem() {
+            var _this = this;
+
+            return new Promise(function (resolve) {
+                _this.$http.post(_this.store.apiUrl + _this.module, _this.item).then(function (response) {
+                    _this.$swal("Added!", response.data.name, "success");
+                    _this.$emit('added');
+                    resolve();
+                }, function (response) {
+                    _this.$swal("Something went wrong. Try again!", JSON.stringify(response.data), "error");
+                });
+            });
+        },
+        updateItem: function updateItem() {
+            var _this2 = this;
+
+            return new Promise(function (resolve) {
+                _this2.$http.patch(_this2.store.apiUrl + _this2.module + '/' + _this2.item.id + '/', _this2.item).then(function (response) {
+                    _this2.$swal("Edited!", _this2.item.name, "success");
+                    resolve();
+                }, function (response) {
+                    _this2.$swal("Something went wrong. Try again!", JSON.stringify(response.data), "error");
+                });
+            });
+        }
+    }
+
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.onSubmit($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Name:")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.item.name,
+                  expression: "item.name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", id: "name", placeholder: "Name" },
+              domProps: { value: _vm.item.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.item, "name", $event.target.value)
+                }
+              }
+            })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _vm.item.id
+            ? _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Edit")])
+            : _c("button", { staticClass: "btn btn-success" }, [
+                _vm._v("Create")
+              ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e55df25a", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'crud-back',
+    props: ['name']
+});
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("router-link", { attrs: { to: { name: _vm.name } } }, [
+    _vm._v("Go back to " + _vm._s(_vm.name))
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-df837204", module.exports)
+  }
+}
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "panel panel-default" }, [
+        _c("div", { staticClass: "panel-heading" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _vm._v(
+                "\n                        " +
+                  _vm._s(_vm.store.title) +
+                  "\n                    "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "panel-body" },
+          [
+            _c("users-form", {
+              attrs: { store: _vm.store, item: _vm.item, module: _vm.module }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "panel-footer" },
+          [_c("crud-back", { attrs: { name: _vm.module } })],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-12453d4b", module.exports)
+  }
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(88)
+/* template */
+var __vue_template__ = __webpack_require__(90)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\adminView\\countries\\Edit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5edb55ce", Component.options)
+  } else {
+    hotAPI.reload("data-v-5edb55ce", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Crud_Edit__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Form_vue__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Form_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Form_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__components_Crud_Edit__["a" /* default */]],
+    components: { CountriesForm: __WEBPACK_IMPORTED_MODULE_3__Form_vue___default.a, CrudBack: __WEBPACK_IMPORTED_MODULE_1__components_Crud_Back_vue___default.a, CreateButton: __WEBPACK_IMPORTED_MODULE_2__components_Crud_CreateButton_vue___default.a },
+    data: function data() {
+        return {
+            module: 'countries'
+        };
+    }
+});
+
+/***/ }),
+/* 89 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    props: ['store'],
+    data: function data() {
+        return {
+            loading: true,
+            item: {},
+            id: this.$route.params.id
+        };
+    },
+
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.getItem().then(function () {
+            _this.loading = false;
+        });
+    },
+    methods: {
+        getItem: function getItem() {
+            var _this2 = this;
+
+            return new Promise(function (resolve) {
+                _this2.$http.get(_this2.getUrl()).then(function (response) {
+                    _this2.item = response.data;
+                    resolve();
+                }, function () {
+                    _this2.$swal("Something went wrong. Try again!", '', "error");
+                });
+            });
+        },
+        getUrl: function getUrl() {
+            return this.store.apiUrl + this.module + '/' + this.id + '/';
+        }
+    }
+});
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "panel panel-default" }, [
+        _c("div", { staticClass: "panel-heading" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _vm._v(
+                "\n                        " +
+                  _vm._s(_vm.store.title) +
+                  "\n                    "
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 text-right" },
+              [_c("create-button", { attrs: { name: "users-create" } })],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "panel-body" },
+          [
+            _vm.item.id
+              ? _c("countries-form", {
+                  attrs: {
+                    store: _vm.store,
+                    item: _vm.item,
+                    module: _vm.module
+                  }
+                })
+              : _c("loader", [_vm._v("Loading country #" + _vm._s(_vm.id))])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "panel-footer" },
+          [_c("crud-back", { attrs: { name: _vm.module } })],
+          1
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5edb55ce", module.exports)
   }
 }
 
