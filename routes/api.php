@@ -24,4 +24,5 @@ Route::group([
     'as' => 'api',
 ], function () {
     Route::resource('countries', 'CountriesContoller', ['except' => ['create', 'edit']]);
+     Route::resource('countries/create', 'CountriesContoller', ['except' => ['create', 'edit']]);
 });

@@ -4,7 +4,6 @@ import Router from 'vue-router'
 // Components
 import AdminHome from './components/AdminHome.vue'
 import Countries from './adminView/countries/Index.vue'
-import CountriesCreate from './adminView/countries/Create.vue'
 import CountriesEdit from './adminView/countries/Edit.vue'
 
 Vue.use(Router);
@@ -27,13 +26,13 @@ export function newRouter() {
                 }
             },  
              {
-                path: adminUrl + 'countries/create', name: 'countries-create', component: CountriesCreate,
+                path: adminUrl + 'countries/create', name: 'countries-create', component: CountriesEdit,
                 meta: {
                     title: 'Countries - Create',
                 }
             },
             {
-                path: adminUrl + 'countries/:id', name: 'countries-edit', component: CountriesEdit,
+                path: adminUrl + 'countries/create/:id', name: 'countries-edit', component: CountriesEdit,
                 meta: {
                     title: 'Countries - Edit',
                 }

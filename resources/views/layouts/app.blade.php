@@ -62,7 +62,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">                             
-                                    <li><a href="{{ route('admin') }}">Admin Panel</a></li>
+                                    <li><a href="#">Admin Panel</a></li>
                                     <li class="divider"></li>                              
 
                                 <li>

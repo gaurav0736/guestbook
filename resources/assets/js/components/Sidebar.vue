@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="panel panel-default">
-            <div class="panel-heading">Sidebar example</div>
+            <div class="panel-heading">Menu</div>
 
             <div class="panel-body">
                 <ul class="list-unstyled">
@@ -15,11 +15,7 @@
                             <span class="glyphicon glyphicon-globe"></span> Counties
                         </router-link>
                     </li>
-                    <li>
-                        <router-link :to="{ name: 'users'}">
-                            <span class="glyphicon glyphicon-user"></span> Users
-                        </router-link>
-                    </li>
+                   
                 </ul>
             </div>
         </div>

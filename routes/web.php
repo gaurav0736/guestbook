@@ -29,8 +29,9 @@ Route::group([
     Route::get('/', 'HomeController@index')->name('home');
     // Views => redirect to page with router-view
     // Countries
-    Route::get('/countries', 'HomeController@index');
-    Route::get('/countries/{id}', 'HomeController@index');
+    Route::get('/countries', 'HomeController@index');   
+    Route::get('/countries/create/{id}', 'HomeController@index');
+    Route::get('/countries/create', 'HomeController@index');
     // Users
     Route::get('/users', 'HomeController@index');
     Route::get('/users/{id}', 'HomeController@index');

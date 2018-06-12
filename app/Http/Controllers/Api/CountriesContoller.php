@@ -14,7 +14,7 @@ class CountriesContoller extends Controller
     	 if ($request->get('paginate') == 'false') {
             return response($countries->get());
         }
-        return response($countries->paginate(10));
+        return response($countries->paginate(8));
 
     }
      /**

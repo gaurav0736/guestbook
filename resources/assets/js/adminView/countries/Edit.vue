@@ -14,8 +14,24 @@
 
                 </div>
                 <div class="panel-body">
-                    <countries-form :store="store" :item="item" :module="module" v-if="item.id"></countries-form>
-                    <loader v-else>Loading country #{{ id }}</loader>
+                    <form @submit.prevent="onSubmit" >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Name:</label>
+                                        <input type="text" class="form-control" id="name" v-model="item.name"
+                                               placeholder="Name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" v-if="item.id">Edit</button>
+                                    <button class="btn btn-success" v-else>Create</button>
+                                </div>
+                            </div>
+                        </form>
+                  
                 </div>
                 <div class="panel-footer">
                     <crud-back :name="module"></crud-back>
@@ -29,12 +45,11 @@
     import CrudEdit from '../../components/Crud/Edit'
     import CrudBack from "../../components/Crud/Back.vue";
     import CreateButton from "../../components/Crud/CreateButton.vue";
-
-    import CountriesForm from './Form.vue'
+    import CrudForm from '../../components/Crud/Form'
 
     export default {
         mixins: [CrudEdit],
-        components: {CountriesForm, CrudBack, CreateButton},
+        components: {CrudBack, CreateButton},
         data() {
             return {
                 module: 'countries'
